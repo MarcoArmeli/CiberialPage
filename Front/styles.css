@@ -1,0 +1,189 @@
+@font-face {
+    font-family: "OCRAEXT";
+    src: url('FONTS/OCRAEXT.TTF');
+}
+
+/* Dropdown Button */
+.dropbtn {
+  background-color: #04AA6D;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  right: 15px;
+  display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #ddd;}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {display: block;}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {background-color: #3e8e41;}
+
+
+
+body {
+	margin: 0;
+	padding: 0;
+	background-image: url("https://drive.google.com/uc?export=view&id=1PVOPrEWbaqb-km21D1Mm5OYHQEF-BFML");
+	background-size: cover;
+	background-repeat: no-repeat;
+    background-color: #252524
+}
+
+.header-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 7px;
+}
+.header-container a:hover {
+    transform: scale(1.1);
+  }
+.header-container img {
+    height: 60px;
+
+}
+.zoomable:hover {
+    transform: scale(1.1);
+    transition: transform 0.3s ease-in-out;
+}
+.header-container h1 {
+    font-family: "OCRAEXT", sans-serif;
+    margin: 0 7px;
+    color: #FFFFFF;
+}
+
+@media (max-width: 768px) {
+    .header-container img {
+        height: 40px;
+    }
+
+    .header-container h1 {
+        font-size: 29px;
+    }
+}
+
+.button-checkout {
+    background-color: white;
+    color: black;
+    border: 2px solid #008CBA; /* Blue */
+    transition-duration: 0.4s;
+    right: 15px;
+    bottom: 15px;
+}
+
+.button-checkout:hover {
+    background-color: #008CBA; /* Blue */
+    color: white;
+}
+
+.page-content {
+	display: flex;
+	flex-direction: row;
+	align-items: stretch;
+	justify-content: center;
+}
+
+.card {
+	margin: 15px;
+  padding: 2px 16px;
+  position: relative;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.1);
+	background-color: #ccff0e;
+}
+
+.card img {
+	width: 300px;
+}
+
+.card h1 {
+  margin-bottom: 10px;
+  margin-left: 15px;
+
+}
+
+.button-add {
+    background-color: white;
+    color: black;
+    border: 2px solid #4CAF50; /* Green */
+    transition-duration: 0.4s;
+    position: absolute;
+    right: 15px;
+    bottom: 10px;
+}
+
+.button-add:hover {
+    background-color: #4CAF50; /* Green */
+    color: white;
+}
+
+.header-bottom h1 {
+    color: white;
+    font-size: 33px;
+    font-family: 'OCRAEXT', sans-serif;
+    margin: px 0 0 0 0;
+}
+
+footer {
+	background-color: #000000;
+	color: white;
+	text-align: center;
+	padding: 3px;
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+}
+
+
+
+.card .header-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'OCRAEXT', sans-serif;
+    margin: px 100;
+}
+  
+.card .header-container a {
+    font-size: 14px;
+    font-weight: bold;
+    margin: 0 5px;
+    text-decoration: none;
+    color: black;
+  }
+  
+.card .header-container a:hover {
+    color: blue;
+  }
+  
+.card .header-container a:active {
+    color: blue;
+  }
