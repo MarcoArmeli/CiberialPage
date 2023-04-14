@@ -1,27 +1,35 @@
-let products = [];
+let carrito = [];
 let total = 0;
 
-function add(product, price) {
-    console.log(product, price);
-    products.push(product);
+function add(productId, price) {
+    console.log(productId, price);
+    carrito.push(productId);
     total = total + price;
     document.getElementById("checkout").innerHTML = `Pagar $${total}`
 }
 
-function pay() {
-    window.alert(products.join(", \n"));
+async function pay() {
+    const productList = await (await fetch('/api/pay', {
+        method: "post",
+        body: JSON.stringify(carrito),
+        headers: {
+            "Content-Type": "application/json"
+        }
+    })).json();
+
 }
 
-//-----
+//-----<h3>${element.name}</h3> may go under card class
 function displayProducts(productList) {
     let productsHTML = '';
     productList.forEach(element => {
         productsHTML +=
-        `<div class="card">
-            <h3>${element.name}</h3>
-            <img src="${element.image}" />
-            <h1>$${element.price}</h1>
-            <button class="button-add" onclick="add(${element.id}, ${element.price})">Agregar</button>
+        `<div class="col-sm-12 col-md-6 col-lg-4 card">
+            <img src="${element.image}"/>
+            <div class="buy">
+                <h1>$${element.price}</h1>
+                <button class="button-add" onclick="add(${element.id}, ${element.price})">Agregar</button>
+            </div>
         </div>`
     });
     document.getElementById('page-content').innerHTML = productsHTML;

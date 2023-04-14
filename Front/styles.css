@@ -5,7 +5,7 @@
 
 /* Dropdown Button */
 .dropbtn {
-  background-color: #04AA6D;
+  background-color: #000000;
   color: white;
   padding: 16px;
   font-size: 16px;
@@ -44,7 +44,7 @@
 .dropdown:hover .dropdown-content {display: block;}
 
 /* Change the background color of the dropdown button when the dropdown content is shown */
-.dropdown:hover .dropbtn {background-color: #3e8e41;}
+.dropdown:hover .dropbtn {background-color: grey;}
 
 
 
@@ -63,11 +63,12 @@ body {
     align-items: center;
     margin-top: 7px;
 }
+
 .header-container a:hover {
     transform: scale(1.1);
   }
 .header-container img {
-    height: 60px;
+    height: 30px;
 
 }
 .zoomable:hover {
@@ -78,16 +79,6 @@ body {
     font-family: "OCRAEXT", sans-serif;
     margin: 0 7px;
     color: #FFFFFF;
-}
-
-@media (max-width: 768px) {
-    .header-container img {
-        height: 40px;
-    }
-
-    .header-container h1 {
-        font-size: 29px;
-    }
 }
 
 .button-checkout {
@@ -112,6 +103,8 @@ body {
 }
 
 .card {
+  display:flex;
+  size: 150px;
 	margin: 15px;
   padding: 2px 16px;
   position: relative;
@@ -120,6 +113,7 @@ body {
 }
 
 .card img {
+  justify-content: center;
 	width: 300px;
 }
 
@@ -151,39 +145,7 @@ body {
     margin: px 0 0 0 0;
 }
 
-footer {
-	background-color: #000000;
-	color: white;
-	text-align: center;
-	padding: 3px;
-	position: fixed;
-	bottom: 0;
-	left: 0;
-	width: 100%;
+.footer{
+  grid-area: footer;
 }
 
-
-
-.card .header-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-family: 'OCRAEXT', sans-serif;
-    margin: px 100;
-}
-  
-.card .header-container a {
-    font-size: 14px;
-    font-weight: bold;
-    margin: 0 5px;
-    text-decoration: none;
-    color: black;
-  }
-  
-.card .header-container a:hover {
-    color: blue;
-  }
-  
-.card .header-container a:active {
-    color: blue;
-  }
