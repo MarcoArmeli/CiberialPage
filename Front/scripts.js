@@ -25,9 +25,9 @@ function displayProducts(productList) {
     productList.forEach(element => {
         productsHTML +=
         `<div class="col-sm-12 col-md-6 col-lg-4 card">
-            <img src="${element.image}"/>
+            <img class="zoomable" src="${element.image}"/>
             <div class="buy">
-                <h1>$${element.price}</h1>
+                <h2>$${element.price}</h2>
                 <button class="button-add" onclick="add(${element.id}, ${element.price})">Agregar</button>
             </div>
         </div>`
