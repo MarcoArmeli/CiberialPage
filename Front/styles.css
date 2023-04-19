@@ -141,6 +141,23 @@ body {
     color: white;
 }
 
+.button-add.disabled {
+    background-color: white;
+    font-family: "OCRAEXT", sans-serif;
+    color: black;
+    border: 2px solid grey; 
+    transition-duration: 0.4s;
+    position: absolute;
+    right: 15px;
+    bottom: 10px;
+}
+
+.button-add.disabled:hover {
+    background-color: grey;
+    color: white;
+}
+
+
 .header-bottom h1 {
     color: white;
     font-size: 33px;

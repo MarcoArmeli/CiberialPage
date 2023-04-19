@@ -1,61 +1,35 @@
 const express = require('express')
+const repository = require('./repository')
 const app = express()
 const port = 3000
 
 app.use(express.json());
 
-const products = [
-    {
-        id: 1,
-        name: "prenda1",
-        price: 300,
-        image: "./elementos/remera kuromi.png",
-        stock: 3,
-    }, {
-        id: 2,
-        name: "prenda2",
-        price: 300,
-        image: "./elementos/remera kuromi.png",
-        stock: 3,
-    }, {
-        id: 3,
-        name: "prenda3",
-        price: 300,
-        image: "./elementos/remera the angel.png",
-        stock: 3,
-    },{
-        id: 4,
-        name: "prenda4",
-        price: 300,
-        image: "./elementos/remera the angel.png",
-        stock: 3,
-    },{
-        id: 5,
-        name: "prenda5",
-        price: 300,
-        image: "./elementos/remera the angel.png",
-        stock: 3,
-    },{
-        id: 6,
-        name: "prenda6",
-        price: 300,
-        image: "./elementos/remera the angel.png",
-        stock: 3,
-    }
-];
-
-
-app.get('/api/products', (req, res) => {
-  res.send(products)
+app.get('/api/products', async (req, res) => {
+  res.send(await repository.read())
 });
 
-app.post('/api/pay', (req, res) => {
+app.post('/api/pay', async (req, res) => {
   const ids = req.body;
+  const productsCopy = await repository.read();
+  let error = false;
+
   ids.forEach(id => {
-    const product = products.find(p => p.id === id);
-    product.stock--;
+    const product = productsCopy.find((p) => p.id === id);
+    if (product.stock > 0) {
+      product.stock--
+    }
+    else {
+      error = true;
+    }
   });
-  res.send(products);
+  if (error) {
+    res.send("sin stock");
+  }
+  else {
+    await repository.write(productsCopy)
+    res.send(productsCopy);
+  }
 });
 
 app.use("/", express.static("Front"));
