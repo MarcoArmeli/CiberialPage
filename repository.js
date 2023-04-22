@@ -23,7 +23,7 @@ async function read() {
     const products = rows.map((row) => ({
         id: +row[0],
         name: row[1],
-        price: +row[2],
+        price: row[2],
         image: row[3],
         stock: +row[4],
     }));

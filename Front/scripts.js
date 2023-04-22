@@ -46,7 +46,7 @@ function displayProducts() {
             `<div class="col-sm-12 col-md-6 col-lg-4 card">
             <img class="zoomable" src="${p.image}"/>
             <div class="buy">
-                <h3>${p.price}</h2>
+                <h3>$${p.price}</h3>
                 ${buttonHTML}
             </div>
         </div>`
